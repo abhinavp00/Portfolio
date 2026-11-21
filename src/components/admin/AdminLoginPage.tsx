@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import {
   ArrowLeft,
@@ -16,14 +17,24 @@ interface AdminLoginPageProps {
 }
 
 export const AdminLoginPage: React.FC<AdminLoginPageProps> = ({ onNavigate }) => {
-  const { adminProfile, loading, authError, signInWithCredentials, clearAuthError } =
-    useAdminAuth();
+  const {
+    adminProfile,
+    loading,
+    authError,
+    signInWithCredentials,
+    clearAuthError,
+  } = useAdminAuth();
 
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  // Default administrator credentials
+  const [username, setUsername] = useState('Abhinavp');
+  const [password, setPassword] = useState('abhinavp@kichu');
+
   const [showPassword, setShowPassword] = useState(false);
   const [submitting, setSubmitting] = useState(false);
-  const [fieldErrors, setFieldErrors] = useState<{ username?: string; password?: string }>({});
+  const [fieldErrors, setFieldErrors] = useState<{
+    username?: string;
+    password?: string;
+  }>({});
   const [loginSuccess, setLoginSuccess] = useState(false);
 
   useEffect(() => {
@@ -33,36 +44,53 @@ export const AdminLoginPage: React.FC<AdminLoginPageProps> = ({ onNavigate }) =>
   }, [loading, adminProfile, loginSuccess, onNavigate]);
 
   const validate = (): boolean => {
-    const nextErrors: { username?: string; password?: string } = {};
+    const nextErrors: {
+      username?: string;
+      password?: string;
+    } = {};
+
     if (!username.trim()) {
       nextErrors.username = 'Please enter your administrator username.';
     }
+
     if (!password) {
       nextErrors.password = 'Please enter your administrator password.';
     }
+
     setFieldErrors(nextErrors);
+
     return Object.keys(nextErrors).length === 0;
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
     clearAuthError();
+
     if (!validate()) return;
 
     setSubmitting(true);
-    const result = await signInWithCredentials(username, password);
-    setSubmitting(false);
 
-    if (result.ok) {
-      setLoginSuccess(true);
-      setTimeout(() => {
-        onNavigate('/admin/dashboard');
-      }, 450);
+    try {
+      const result = await signInWithCredentials(username, password);
+
+      if (result.ok) {
+        setLoginSuccess(true);
+
+        setTimeout(() => {
+          onNavigate('/admin/dashboard');
+        }, 450);
+      }
+    } catch (error) {
+      console.error('Administrator login failed:', error);
+    } finally {
+      setSubmitting(false);
     }
   };
 
   return (
     <div className="min-h-screen bg-[#080B14] text-[#F8FAFC] flex flex-col justify-between p-4 sm:p-8 relative overflow-hidden">
+
       {/* Subtle Ambient Accent */}
       <div
         aria-hidden="true"
@@ -82,21 +110,26 @@ export const AdminLoginPage: React.FC<AdminLoginPageProps> = ({ onNavigate }) =>
 
       <main className="relative z-10 w-full max-w-md mx-auto my-auto py-8">
         <div className="rounded-2xl border border-slate-800 bg-[#111827]/95 backdrop-blur-xl p-7 sm:p-8 shadow-[0_24px_60px_rgba(0,0,0,0.55)]">
+
           <div className="flex items-center gap-3 mb-6">
             <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#3B82F6]/20 to-[#8B5CF6]/20 border border-[#3B82F6]/40 flex items-center justify-center text-[#3B82F6]">
               <Lock className="w-5 h-5" />
             </div>
+
             <div>
               <p className="text-[11px] font-mono uppercase tracking-[0.18em] text-[#3B82F6]">
                 Administrator Login
               </p>
-              <h1 className="text-lg font-semibold text-[#F8FAFC]">Portfolio Admin System</h1>
+
+              <h1 className="text-lg font-semibold text-[#F8FAFC]">
+                Portfolio Admin System
+              </h1>
             </div>
           </div>
 
           <p className="text-sm text-[#94A3B8] leading-relaxed mb-6">
-            Sign in with your administrator credentials to manage portfolio content, active PDF
-            resumes, enquiries, and visitor analytics.
+            Sign in with your administrator credentials to manage portfolio
+            content, active PDF resumes, enquiries, and visitor analytics.
           </p>
 
           {authError && (
@@ -105,8 +138,10 @@ export const AdminLoginPage: React.FC<AdminLoginPageProps> = ({ onNavigate }) =>
               className="mb-5 rounded-xl border border-red-500/40 bg-red-500/10 p-3.5 flex items-start gap-2.5 text-xs text-red-200"
             >
               <ShieldAlert className="w-4 h-4 text-red-400 shrink-0 mt-0.5" />
+
               <div className="flex-1">
                 <p className="font-medium text-red-200">{authError}</p>
+
                 <button
                   type="button"
                   onClick={clearAuthError}
@@ -124,6 +159,7 @@ export const AdminLoginPage: React.FC<AdminLoginPageProps> = ({ onNavigate }) =>
               className="mb-5 rounded-xl border border-emerald-500/40 bg-emerald-500/10 p-3.5 flex items-center gap-2.5 text-xs text-emerald-200"
             >
               <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+
               <p className="font-medium">
                 Authentication successful. Redirecting to dashboard...
               </p>
@@ -131,6 +167,8 @@ export const AdminLoginPage: React.FC<AdminLoginPageProps> = ({ onNavigate }) =>
           )}
 
           <form onSubmit={handleSubmit} noValidate className="space-y-4">
+
+            {/* Username */}
             <div>
               <label
                 htmlFor="admin-username"
@@ -138,6 +176,7 @@ export const AdminLoginPage: React.FC<AdminLoginPageProps> = ({ onNavigate }) =>
               >
                 Username
               </label>
+
               <input
                 id="admin-username"
                 name="username"
@@ -147,9 +186,14 @@ export const AdminLoginPage: React.FC<AdminLoginPageProps> = ({ onNavigate }) =>
                 value={username}
                 onChange={(e) => {
                   setUsername(e.target.value);
+
                   if (fieldErrors.username) {
-                    setFieldErrors((prev) => ({ ...prev, username: undefined }));
+                    setFieldErrors((prev) => ({
+                      ...prev,
+                      username: undefined,
+                    }));
                   }
+
                   if (authError) clearAuthError();
                 }}
                 placeholder="Enter your username"
@@ -160,11 +204,15 @@ export const AdminLoginPage: React.FC<AdminLoginPageProps> = ({ onNavigate }) =>
                     : 'border-slate-800 focus:border-[#3B82F6]'
                 }`}
               />
+
               {fieldErrors.username && (
-                <p className="mt-1.5 text-xs text-red-400">{fieldErrors.username}</p>
+                <p className="mt-1.5 text-xs text-red-400">
+                  {fieldErrors.username}
+                </p>
               )}
             </div>
 
+            {/* Password */}
             <div>
               <label
                 htmlFor="admin-password"
@@ -172,6 +220,7 @@ export const AdminLoginPage: React.FC<AdminLoginPageProps> = ({ onNavigate }) =>
               >
                 Password
               </label>
+
               <div className="relative">
                 <input
                   id="admin-password"
@@ -182,9 +231,14 @@ export const AdminLoginPage: React.FC<AdminLoginPageProps> = ({ onNavigate }) =>
                   value={password}
                   onChange={(e) => {
                     setPassword(e.target.value);
+
                     if (fieldErrors.password) {
-                      setFieldErrors((prev) => ({ ...prev, password: undefined }));
+                      setFieldErrors((prev) => ({
+                        ...prev,
+                        password: undefined,
+                      }));
                     }
+
                     if (authError) clearAuthError();
                   }}
                   placeholder="Enter your password"
@@ -195,6 +249,7 @@ export const AdminLoginPage: React.FC<AdminLoginPageProps> = ({ onNavigate }) =>
                       : 'border-slate-800 focus:border-[#3B82F6]'
                   }`}
                 />
+
                 <button
                   type="button"
                   onClick={() => setShowPassword((prev) => !prev)}
@@ -209,11 +264,15 @@ export const AdminLoginPage: React.FC<AdminLoginPageProps> = ({ onNavigate }) =>
                   )}
                 </button>
               </div>
+
               {fieldErrors.password && (
-                <p className="mt-1.5 text-xs text-red-400">{fieldErrors.password}</p>
+                <p className="mt-1.5 text-xs text-red-400">
+                  {fieldErrors.password}
+                </p>
               )}
             </div>
 
+            {/* Sign In */}
             <button
               type="submit"
               disabled={submitting || loading || loginSuccess}
@@ -233,18 +292,24 @@ export const AdminLoginPage: React.FC<AdminLoginPageProps> = ({ onNavigate }) =>
                 <span>Sign In</span>
               )}
             </button>
+
           </form>
 
           <div className="mt-6 pt-5 border-t border-slate-800/80 flex items-center gap-2 text-xs text-[#94A3B8]">
             <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
-            <span>Protected by backend credential verification &amp; encrypted sessions.</span>
+
+            <span>
+              Protected by backend credential verification &amp; encrypted sessions.
+            </span>
           </div>
+
         </div>
       </main>
 
       <footer className="relative z-10 text-center text-xs text-slate-500">
         Abhinav P — Portfolio Management &amp; Analytics Platform
       </footer>
+
     </div>
   );
 };
