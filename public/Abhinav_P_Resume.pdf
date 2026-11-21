@@ -1,0 +1,160 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 4 0 R /Resources << /Font << /F1 5 0 R /F2 6 0 R >> >> >>
+endobj
+4 0 obj
+<< /Length 4017 >>
+stream
+BT
+/F2 20 Tf
+1 0 0 1 50 760 Tm
+(ABHINAV P) Tj
+/F2 12 Tf
+1 0 0 1 50 740 Tm
+(Data Analytics | Python Full Stack Developer) Tj
+/F1 9.5 Tf
+1 0 0 1 50 724 Tm
+(Kerala, India  |  abhinavp06082004@gmail.com) Tj
+/F1 9.5 Tf
+1 0 0 1 50 711 Tm
+(GitHub: github.com/abhinavp00  |  LinkedIn: linkedin.com/in/abhinav-python-dev) Tj
+/F1 9 Tf
+1 0 0 1 50 698 Tm
+(----------------------------------------------------------------------------------------------------) Tj
+/F2 11 Tf
+1 0 0 1 50 681 Tm
+(PROFESSIONAL SUMMARY) Tj
+/F1 9.5 Tf
+1 0 0 1 50 666 Tm
+(Data Analytics and Backend Developer with hands-on experience building data-driven) Tj
+/F1 9.5 Tf
+1 0 0 1 50 653 Tm
+(systems, interactive analytics dashboards, and optimizing Django REST APIs for asset) Tj
+/F1 9.5 Tf
+1 0 0 1 50 640 Tm
+(management and e-commerce platforms. Achieved ~25% P95 API latency reduction) Tj
+/F1 9.5 Tf
+1 0 0 1 50 627 Tm
+(via N+1 query elimination and composite indexing, and ~40% faster report generation.) Tj
+/F2 11 Tf
+1 0 0 1 50 604 Tm
+(EXPERIENCE) Tj
+/F2 10 Tf
+1 0 0 1 50 589 Tm
+(Data Analytics Intern - Knovista Technologies, Kochi \(Jan 2026 - Apr 2026\)) Tj
+/F1 9.5 Tf
+1 0 0 1 50 575 Tm
+(- Analyzed datasets using Python, SQL, Pandas, NumPy, and Excel for KPI insights.) Tj
+/F1 9.5 Tf
+1 0 0 1 50 562 Tm
+(- Built interactive dashboards and visualizations in Power BI, Tableau, Matplotlib, Seaborn.) Tj
+/F2 10 Tf
+1 0 0 1 50 544 Tm
+(Python Full-Stack Developer Intern - Knovista Technologies, Kochi \(Aug 2025 - Dec 2025\)) Tj
+/F1 9.5 Tf
+1 0 0 1 50 530 Tm
+(- Reduced P95 API latency by ~25% via N+1 query elimination and composite indexing.) Tj
+/F1 9.5 Tf
+1 0 0 1 50 517 Tm
+(- Architected DRF services \(auth, catalog, orders\) with JWT, RBAC, React.js, Swagger.) Tj
+/F2 10 Tf
+1 0 0 1 50 499 Tm
+(AI Intern - EdiGlobe Internship Program) Tj
+/F1 9.5 Tf
+1 0 0 1 50 485 Tm
+(- Built ML models with Scikit-learn and developed a Car Price Prediction system.) Tj
+/F2 11 Tf
+1 0 0 1 50 462 Tm
+(FEATURED PROJECTS) Tj
+/F2 10 Tf
+1 0 0 1 50 447 Tm
+(1. AssetSphere - Asset Inventory Management System \(Feb 2026\)) Tj
+/F1 9.5 Tf
+1 0 0 1 50 433 Tm
+(   Python, Django, DRF, React.js, PostgreSQL, MySQL, Docker | ~40% faster reporting.) Tj
+/F2 10 Tf
+1 0 0 1 50 417 Tm
+(2. Rent-A-Car - Vehicle Booking Platform \(Nov 2025\)) Tj
+/F1 9.5 Tf
+1 0 0 1 50 403 Tm
+(   Python, Django, DRF, React.js, MySQL, JWT Auth, concurrent-booking validation.) Tj
+/F2 10 Tf
+1 0 0 1 50 387 Tm
+(3. Lead Conversion Prediction \(Machine Learning / Predictive Analytics\)) Tj
+/F1 9.5 Tf
+1 0 0 1 50 373 Tm
+(   Python, Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn \(LR, RF, SVM, ROC-AUC\).) Tj
+/F2 11 Tf
+1 0 0 1 50 350 Tm
+(TECHNICAL SKILLS) Tj
+/F1 9.5 Tf
+1 0 0 1 50 335 Tm
+(Analytics & ML: Python, SQL, Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn, EDA) Tj
+/F1 9.5 Tf
+1 0 0 1 50 322 Tm
+(Backend & DB: Django, DRF, JWT, RBAC, PostgreSQL, MySQL, Supabase, Indexing) Tj
+/F1 9.5 Tf
+1 0 0 1 50 309 Tm
+(Frontend & BI: React.js, JavaScript, HTML5, CSS3, Bootstrap, Power BI, Tableau, Excel) Tj
+/F1 9.5 Tf
+1 0 0 1 50 296 Tm
+(AI & Tools: Claude, Cursor, Google AI Studio, n8n, LLMs, Docker, Git, Postman, Swagger) Tj
+/F2 11 Tf
+1 0 0 1 50 273 Tm
+(EDUCATION) Tj
+/F1 9.5 Tf
+1 0 0 1 50 258 Tm
+(Bachelor of Computer Applications \(BCA\) - SES College of Sreekandapuram \(2022 - 2025\)) Tj
+/F1 9.5 Tf
+1 0 0 1 50 245 Tm
+(Kannur University | Academic Performance: 72.17%) Tj
+/F1 9.5 Tf
+1 0 0 1 50 230 Tm
+(Higher Secondary Education \(HSE\) - Brennan HSS, Kerala \(2022\) | 87.00%) Tj
+/F2 11 Tf
+1 0 0 1 50 207 Tm
+(CERTIFICATIONS) Tj
+/F1 9.5 Tf
+1 0 0 1 50 192 Tm
+(- AI Internship Program \(EdiGlobe in collaboration with IIT Kharagpur\)) Tj
+/F1 9.5 Tf
+1 0 0 1 50 179 Tm
+(- Python Full-Stack Development with React \(Knovista Technologies\)) Tj
+/F1 9.5 Tf
+1 0 0 1 50 166 Tm
+(- Data Analytics \(Knovista Technologies\)) Tj
+/F1 9.5 Tf
+1 0 0 1 50 153 Tm
+(- Android Application Development \(Riss Technologies\)) Tj
+/F1 9.5 Tf
+1 0 0 1 50 140 Tm
+(- Blue Prism Foundation Training \(SS&C Blue Prism University\)) Tj
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+6 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000251 00000 n 
+0000004319 00000 n 
+0000004389 00000 n 
+trailer
+<< /Size 7 /Root 1 0 R >>
+startxref
+4464
+%%EOF
